@@ -2,5 +2,5 @@ include AUTHORS
 include LICENSE
 include README.rst
 include *.txt
-recursive-include docs *
+recursive-include django_docs *
 recursive-exclude * *.pyc

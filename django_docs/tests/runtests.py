@@ -25,7 +25,7 @@ EXTERNAL_APPS = [
 ]
 INTERNAL_APPS = [
     'django_nose',
-    'docs',
+    'django_docs',
 ]
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
 COVERAGE_MODULE_EXCLUDES = [
@@ -42,8 +42,12 @@ if not settings.configured:
                 "NAME": ":memory:",
             }
         },
+        MIDDLEWARE_CLASSES = (
+            'django.contrib.sessions.middleware.SessionMiddleware',
+            'django.contrib.auth.middleware.AuthenticationMiddleware',
+        ),
         INSTALLED_APPS=INSTALLED_APPS,
-        ROOT_URLCONF='docs.tests.urls',
+        ROOT_URLCONF='django_docs.tests.urls',
         TEMPLATE_DIRS=(
             os.path.join(os.path.dirname(__file__), '../../templates'),
         ),
@@ -54,6 +58,8 @@ if not settings.configured:
         PASSWORD_HASHERS = ('django.contrib.auth.hashers.MD5PasswordHasher',),
     )
 
+import django
+django.setup()
 
 from django_coverage.coverage_runner import CoverageRunner
 from django_nose import NoseTestSuiteRunner

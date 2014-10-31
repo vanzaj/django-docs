@@ -21,14 +21,14 @@ except:
 
 setup(
     name='django-docs',
-    version=__import__('docs').__version__,
+    version=__import__('django_docs').__version__,
     author='Evgeny Demchenko',
     author_email='little_pea@list.ru',
     packages=find_packages(),
     include_package_data=True,
     url='https://github.com/littlepea/django-docs',
     license='BSD',
-    description=u' '.join(__import__('docs').__doc__.splitlines()).strip(),
+    description=u' '.join(__import__('django_docs').__doc__.splitlines()).strip(),
     classifiers=[
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Intended Audience :: Developers',
@@ -40,7 +40,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     long_description=read_file('README.rst'),
-    test_suite='docs.tests.runtests.runtests',
+    test_suite='django_docs.tests.runtests.runtests',
     tests_require=[
         'django-nose',
         'coverage',

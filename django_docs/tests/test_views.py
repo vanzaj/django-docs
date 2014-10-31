@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.test.utils import override_settings
 from django.contrib.auth.models import User
 from django.http import Http404
-from docs import views
+from django_docs import views
 
 TEST_DOCS_ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__), 'test_docs'))
 

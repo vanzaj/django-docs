@@ -13,6 +13,15 @@ Credits
 * `Documentation on Read The Docs <https://django-docs.readthedocs.org/>`_
 * Maintained by `Evgeny Demchenko <https://github.com/littlepea>`_
 
+
+Update 2014-10-31
+-----------------
+
+* Rename `docs` to `django_docs` (to avoid namespace collision with any `docs` 
+  folder in `sys.path`)
+* Update tests to run on Django 1.7
+
+
 Installation
 ------------
 
@@ -24,7 +33,7 @@ Installation
 
     INSTALLED_APPS = (
         ...
-        'docs',
+        'django_docs',
         ...
     )
 
@@ -32,7 +41,7 @@ Installation
 
     urlpatterns = patterns('',
         ...
-        url(r'^docs/', include('docs.urls')),
+        url(r'^docs/', include('django_docs.urls')),
         ...
     )
 
@@ -40,6 +49,7 @@ Installation
 
     DOCS_ROOT = os.path.join(PROJECT_PATH, '../docs/_build/html')
     DOCS_ACCESS = 'staff'
+
 
 Configuration
 -------------

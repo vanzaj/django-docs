@@ -8,5 +8,5 @@ from django.conf.urls import include, patterns, url
 
 
 urlpatterns = patterns('',
-    url(r'^', include('docs.urls')),
+    url(r'^', include('django_docs.urls')),
 )
